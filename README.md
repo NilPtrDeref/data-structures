@@ -8,6 +8,7 @@ A collection of basic data structures implemented in Go using generics.
 - [Linked List](#linked-list)
 - [Queue](#queue)
 - [Stack](#stack)
+- [Lru](#lru)
 
 ## Data Structures
 
@@ -76,6 +77,20 @@ val := 42
 s.Push(&val)
 
 top, err := s.Pop() // *int (42)
+```
+
+### Lru
+
+A generic Least Recently Used cache with a fixed capacity.
+
+```go
+import "github.com/woodywood117/data-structures/lru"
+
+l := lru.New[int](1)
+l.Put(42)
+l.Put(67)
+l.Get(42) // nil
+l.Get(67) // *int (67)
 ```
 
 ## Running Tests
